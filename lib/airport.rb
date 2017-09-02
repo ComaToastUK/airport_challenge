@@ -13,6 +13,7 @@ class Airport
 
   def plane_takeoff(plane)
     @planes.delete(plane)
+    puts "#{plane} has left the building"
   end
 
 end
