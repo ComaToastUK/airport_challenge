@@ -20,7 +20,8 @@ describe Airport do
   describe '#plane_takeoff' do
     it 'instructs a plane to take off' do
       plane = Plane.new
-      expect(subject.plane_takeoff(plane)).to eq nil
+      subject.plane_land(plane)
+      expect(subject.plane_takeoff(plane)).to eq plane
     end
   end
 
@@ -28,5 +29,8 @@ describe Airport do
 # To ensure safety
 # I want to prevent landing when weather is stormy
 
+  it 'passes an error when weather is stormy' do
+      expect {airport.plane_land(plane)}.to raise_error "Landing not possible due to stormy weather"
+  end
 
 end

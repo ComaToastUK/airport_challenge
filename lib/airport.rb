@@ -8,16 +8,13 @@ class Airport
   end
 
   def plane_land(plane)
+    fail "Landing not possible due to stormy weather" if stormy?
     @planes << plane
-    puts "#{plane} has landed"
-    planes_count
   end
 
   def plane_takeoff(plane)
     fail "No planes currently in the airport" if empty?
     @planes.delete(plane)
-    puts "#{plane} has left the building"
-    planes_count
   end
 
 private
@@ -32,6 +29,10 @@ private
     else
       puts "There are currently #{@planes.count} planes in the airport"
     end
+  end
+
+  def stormy?
+
   end
 
 end
