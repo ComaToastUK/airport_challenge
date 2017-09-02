@@ -22,9 +22,4 @@ describe Airport do
   expect(subject.plane_takeoff(plane)).to eq nil
   end
 
-  it 'confirms that the plane has left the airport' do
-  plane = Plane.new
-  expect(subject.plane_takeoff(plane)).to eq "#{plane} has left the building"
-  end
-
 end

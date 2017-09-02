@@ -12,8 +12,15 @@ class Airport
   end
 
   def plane_takeoff(plane)
+    fail "No planes currently in the airport" if empty?
     @planes.delete(plane)
     puts "#{plane} has left the building"
   end
 
+end
+
+private
+
+def empty?
+  @planes.empty?
 end
