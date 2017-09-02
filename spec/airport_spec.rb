@@ -5,6 +5,6 @@ describe Airport do
 
   it 'instructs a plane to land' do
   plane = Plane.new
-  expect{plane.plane_land}.to eq plane
+  expect(subject.plane_land(plane)).to eq plane
   end
 end
