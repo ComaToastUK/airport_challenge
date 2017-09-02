@@ -3,7 +3,16 @@ require_relative 'weather'
 
 class Airport
 
-  def plane_land(plane)
-    plane
+  def initialize
+    @planes = []
   end
+
+  def plane_land(plane)
+    @planes << plane
+  end
+
+  def plane_takeoff(plane)
+    @planes.delete(plane)
+  end
+
 end
