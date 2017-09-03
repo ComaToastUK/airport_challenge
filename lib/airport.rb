@@ -3,8 +3,9 @@ require_relative 'weather'
 
 class Airport
 
-  def initialize
+  def initialize(weather: Weather.new)
     @planes = []
+    @weather = weather
   end
 
   def plane_land(plane)
@@ -14,6 +15,7 @@ class Airport
 
   def plane_takeoff(plane)
     fail "No planes currently in the airport" if empty?
+    @planes.include?(plane)
     @planes.delete(plane)
   end
 
@@ -31,8 +33,12 @@ private
     end
   end
 
-  def stormy?
+  def weather
+    @weather
+  end
 
+  def stormy?
+    weather.stormy
   end
 
 end

@@ -30,7 +30,9 @@ describe Airport do
 # I want to prevent landing when weather is stormy
 
   it 'passes an error when weather is stormy' do
+      plane = Plane.new
       expect {airport.plane_land(plane)}.to raise_error "Landing not possible due to stormy weather"
   end
+
 
 end
